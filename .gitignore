@@ -221,3 +221,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local PDF data, test artifacts and dependency caches
+tmp/
+output/
+uploads/
+outputs/
+node_modules/

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PDF Workshop</title><link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+  <header><span class="brand">PDF / WORKSHOP</span><span>Local document tools</span></header>
+  <main>
+    <section class="intro"><p class="eyebrow">EXTRACT. ARRANGE. COMBINE.</p><h1>Your pages.<br>Your order.</h1><p>Split a document into individual PDFs or bring pages together from several files.</p></section>
+    <section class="panel" aria-labelledby="upload-heading">
+      <h2 id="upload-heading">1. Add your documents</h2>
+      <div id="dropzone" class="dropzone"><strong>Drop PDF files here</strong><span>or choose files from your computer</span><label class="button" for="files">Choose PDFs</label><input id="files" type="file" accept="application/pdf,.pdf" multiple></div>
+      <label class="password-label">Password for encrypted PDFs (optional)<input id="password" type="password" autocomplete="off" placeholder="Used only for this upload"></label>
+      <p class="hint">Files stay on this computer when running locally. Temporary files expire after one hour of inactivity.</p>
+      <ul id="documents" class="documents"></ul>
+    </section>
+    <div id="status" role="status" aria-live="polite">Ready to upload.</div><progress id="progress" hidden aria-label="Processing"></progress>
+    <section class="panel" aria-labelledby="extract-heading">
+      <div class="section-title"><h2 id="extract-heading">2. Extract pages</h2><span class="badge">ONE FILE PER PAGE</span></div>
+      <div class="controls"><label>Source document<select id="source"><option value="">Upload a PDF first</option></select></label><label>Page range<input id="range" placeholder="All pages, or 1-3, 5, 8"></label><button id="extract" disabled>Extract pages</button></div>
+      <div id="extraction-downloads" class="downloads"></div>
+    </section>
+    <section class="panel" aria-labelledby="combine-heading">
+      <div class="section-title"><h2 id="combine-heading">3. Arrange &amp; combine</h2><span id="page-count" class="badge">0 PAGES</span></div>
+      <p class="hint">Uploaded pages appear below. Drag cards to reorder, or use their arrow buttons. Duplicate or remove any page.</p>
+      <div class="toolbar"><label>Output filename<input id="output-name" value="combined-document.pdf" maxlength="120"></label><button id="combine" disabled>Download combined PDF</button><button id="clear" class="secondary" disabled>Clear arrangement</button></div>
+      <div id="pages" class="page-grid"><p class="empty">Your pages will appear here.</p></div>
+      <div id="combine-downloads" class="downloads"></div>
+    </section>
+  </main>
+  <footer>PDF Workshop · Original files are never modified. Save your downloads before closing the server.</footer>
+  <script type="module" src="/src/app.js"></script>
+</body>
+</html>
